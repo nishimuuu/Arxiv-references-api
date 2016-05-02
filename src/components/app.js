@@ -7,7 +7,7 @@ ReactDOM.render(
   <div>
     <Header />
     <MyLink gh="https://github.com/nishimuuu/Arxiv-references" gem="https://rubygems.org/gems/arxiv-references" />
-    <Body url="http://localhost:4567/arxiv-references/api/v0.1.4/fetch" pollInterval={2000} />
+    <Body url="/arxiv-references/api/v0.1.4/fetch" pollInterval={2000} />
   </div>,
 document.getElementById('app')
 );
