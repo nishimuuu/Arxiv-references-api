@@ -1,0 +1,87 @@
+---
+  jade: 
+    src : 'src/jade/**'
+    dst : 'assets/html'
+  sass: 
+    src: 'src/sass/**'
+    dst: 'assets/css'
+  coffee: 
+    global: 
+      src: 'src/coffee/global/*.coffee'
+      dst: 'assets/js/global'
+    local: 
+      src: 'src/coffee/local/*.coffee'
+      dst: 'assets/js/local'
+
+  es6:
+    global:
+      src: 'src/es6/global/**'
+      dst: 'assets/js/global'
+    local:
+      src: 'src/es6/local/**'
+      dst: 'assets/js/local'
+
+  html: 
+    src: 
+      - 'assets/html/*.html'
+      - '!assets/html/Squire-UI.html'
+  css: 
+    src: 'assets/css/*.css'
+  js: 
+    global: 
+      src: 
+        - 'assets/js/global/**'
+        - '!assets/js/min/**/*.js'
+      dst: 'assets/js/min'
+    local: 
+      src: 
+        - 'assets/js/local/**'
+        - '!assets/js/min/**/*.js'
+      dst: 'assets/js/min'
+  web: 
+    url: 'assets'
+    port: 10000
+  api: 
+    src: 'doc/api/md/api.md'
+    dst: 'doc/api/html'
+    doc_port: 9000
+    mock_port: 3000
+    test:
+      cmd: 'dredd'
+  app: 
+    cmd: 'cd src/app; python EntryPoint.py --debug 1'
+    prod: 'cd src/app; uwsgi serverstart.ini'
+
+  webpack:
+    src: './webpack.config.js'
+    js:
+      src: 'src/**/*.js'
+
+  url_list:
+    target:
+      url: 'URL_IS_HERE'
+      port: 'PORT_IS_HERE'
+    dev:
+      url: 'http://localhost'
+      port: 5000
+    prod:
+      url: 'http://elb-url'
+      port: 80
+
+  production:
+   web:
+     src: 'assets/**/**'
+     dst: 'production/assets'
+     remote:
+       host: 'path/to'
+       user: 'user'
+       port: 22
+       key: '~/.ssh/keys/hoge'
+   app: 
+     src: 'src/app/**/**'
+     dst: 'production/app'
+     remote:
+       host: 'path/to'
+       user: 'user'
+       port: 22
+       key: '~/.ssh/keys/hoge'
