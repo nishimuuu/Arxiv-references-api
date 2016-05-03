@@ -3,7 +3,7 @@ GEM
   specs:
     Ascii85 (1.0.2)
     afm (0.2.2)
-    arxiv-references (0.1.6.1)
+    arxiv-references (0.1.6.2)
       nokogiri (~> 1.6)
       pdf-reader (~> 1.4)
       thor (~> 0.19)
