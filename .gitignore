@@ -110,5 +110,5 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
-
+nohup.out
 u Created by .ignore support plugin (hsz.mobi)

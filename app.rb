@@ -17,8 +17,6 @@ end
 not_found do
     '404 not found'
 end
-set :bind, '0.0.0.0'
-set :environment, :production
 
 get '/arxiv-references/api/v0.1.4/fetch' do
   cross_origin
