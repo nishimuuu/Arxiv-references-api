@@ -29,7 +29,7 @@ export default class Body extends Component {
         this.setState({ open: false, data: data });
       },
       error: (xhr, status, err) => {
-        this.setState({ open: false, data: xhr.toString()});
+        this.setState({ open: false, data: xhr.responseText});
         console.error(this.props.url, status, err.toString());
       }
     });

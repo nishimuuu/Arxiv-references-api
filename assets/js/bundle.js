@@ -54129,7 +54129,7 @@
 	          _this2.setState({ open: false, data: data });
 	        },
 	        error: function error(xhr, status, err) {
-	          _this2.setState({ open: false, data: xhr.toString() });
+	          _this2.setState({ open: false, data: xhr.responseText });
 	          console.error(_this2.props.url, status, err.toString());
 	        }
 	      });
