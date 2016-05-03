@@ -73,7 +73,7 @@
 	  null,
 	  _react2.default.createElement(_Header2.default, null),
 	  _react2.default.createElement(_MyLink2.default, { gh: 'https://github.com/nishimuuu/Arxiv-references', gem: 'https://rubygems.org/gems/arxiv-references' }),
-	  _react2.default.createElement(_Body2.default, { url: 'http://localhost:4567/arxiv-references/api/v0.1.4/fetch', pollInterval: 2000 })
+	  _react2.default.createElement(_Body2.default, { url: '/arxiv-references/api/v0.1.4/fetch', pollInterval: 2000 })
 	), document.getElementById('app'));
 
 /***/ },
