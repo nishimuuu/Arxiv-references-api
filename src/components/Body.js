@@ -29,7 +29,7 @@ export default class Body extends Component {
         this.setState({ open: false, data: data });
       },
       error: (xhr, status, err) => {
-        this.setState({ open: false});
+        this.setState({ open: false, data: xhr.toString()});
         console.error(this.props.url, status, err.toString());
       }
     });
@@ -53,8 +53,7 @@ export default class Body extends Component {
           modal
           open={this.state.open}
           onRequestClose={this.handleClose}
-          contentStyle={this.customContentStyle}
-    >
+          contentStyle={this.customContentStyle}>
           <LinearProgress mode="indeterminate" />
         </Dialog>
         <TextBox cName="id" hintText="Arxiv ID" floatingLabelText="Put Arxiv ID in here"

@@ -54129,7 +54129,7 @@
 	          _this2.setState({ open: false, data: data });
 	        },
 	        error: function error(xhr, status, err) {
-	          _this2.setState({ open: false });
+	          _this2.setState({ open: false, data: xhr.toString() });
 	          console.error(_this2.props.url, status, err.toString());
 	        }
 	      });
@@ -54156,8 +54156,7 @@
 	            modal: true,
 	            open: this.state.open,
 	            onRequestClose: this.handleClose,
-	            contentStyle: this.customContentStyle
-	          },
+	            contentStyle: this.customContentStyle },
 	          _react2.default.createElement(_linearProgress2.default, { mode: 'indeterminate' })
 	        ),
 	        _react2.default.createElement(_TextBox2.default, { cName: 'id', hintText: 'Arxiv ID', floatingLabelText: 'Put Arxiv ID in here',
