@@ -22,11 +22,11 @@ get '/arxiv-references/api/v0.1.4/fetch' do
   begin
     case key
       when 'id'
-        return ArxivUtil.fetchFromArxivId value, '/tmp'
+        return ArxivUtil.fetchFromArxivId value, '/tmp', false
       when 'pdfurl'
-        return ArxivUtil.fetchFromPdfUrl value, '/tmp'
+        return ArxivUtil.fetchFromPdfUrl value, '/tmp', false
       when 'url'
-        return ArxivUtil.fetchFromUrl value, '/tmp'
+        return ArxivUtil.fetchFromUrl value, '/tmp', false
       else
         halt 400, 'Type is not found (accept only id/pdfurl/url)'
     end
