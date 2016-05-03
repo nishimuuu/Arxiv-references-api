@@ -14,6 +14,11 @@ get '/bundle.js' do
   send_file './assets/js/bundle.js'
 end
 
+not_found do
+    '404 not found'
+end
+set :bind, '0.0.0.0'
+set :environment, :production
 
 get '/arxiv-references/api/v0.1.4/fetch' do
   cross_origin
@@ -22,11 +27,11 @@ get '/arxiv-references/api/v0.1.4/fetch' do
   begin
     case key
       when 'id'
-        return ArxivUtil.fetchFromArxivId value, '/tmp', false
+        return ArxivUtil.fetchFromArxivId value, '/tmp', true
       when 'pdfurl'
-        return ArxivUtil.fetchFromPdfUrl value, '/tmp', false
+        return ArxivUtil.fetchFromPdfUrl value, '/tmp', true
       when 'url'
-        return ArxivUtil.fetchFromUrl value, '/tmp', false
+        return ArxivUtil.fetchFromUrl value, '/tmp', true
       else
         halt 400, 'Type is not found (accept only id/pdfurl/url)'
     end

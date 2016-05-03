@@ -3,11 +3,12 @@ GEM
   specs:
     Ascii85 (1.0.2)
     afm (0.2.2)
-    arxiv-references (0.1.6.3)
+    arxiv-references (0.1.6.4)
       nokogiri (~> 1.6)
       pdf-reader (~> 1.4)
       thor (~> 0.19)
     hashery (2.1.2)
+    kgio (2.10.0)
     mini_portile2 (2.0.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -20,6 +21,7 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    raindrops (0.16.0)
     ruby-rc4 (0.1.5)
     sinatra (1.4.7)
       rack (~> 1.5)
@@ -29,14 +31,19 @@ GEM
     thor (0.19.1)
     tilt (2.0.2)
     ttfunk (1.4.0)
+    unicorn (5.1.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   arxiv-references
+  rack
   sinatra
   sinatra-cross_origin (~> 0.3.1)
+  unicorn
 
 BUNDLED WITH
-   1.10.6
+   1.12.1
