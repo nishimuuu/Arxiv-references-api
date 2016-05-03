@@ -2,18 +2,6 @@ require 'sinatra'
 require 'arxiv/references/myUtil'
 require 'sinatra/cross_origin'
 
-get '/' do
-  send_file './assets/html/index.html'
-end
-
-get '/api' do
-  send_file './doc/api/api.html'
-end
-
-get '/bundle.js' do
-  send_file './assets/js/bundle.js'
-end
-
 not_found do
     '404 not found'
 end
