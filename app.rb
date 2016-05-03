@@ -30,8 +30,8 @@ get '/arxiv-references/api/v0.1.4/fetch' do
       else
         halt 400, 'Type is not found (accept only id/pdfurl/url)'
     end
-  rescue
-    halt 400, "Your value: #{value} is not found"
+  rescue => e
+    halt 400, "Your value: #{value} is not found. error: #{e.to_s}"
   end
 end
 
