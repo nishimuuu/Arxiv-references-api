@@ -10,7 +10,7 @@ export default class Body extends Component {
   constructor(props) {
     'use strict';
     super(props);
-    this.state = { data: '', open: false };
+    this.state = { data: {}, open: false };
     this.customContentStyle = {
       width : '100%',
       maxWidth : 'none',
@@ -26,7 +26,7 @@ export default class Body extends Component {
       data : `type=${value.type}&value=${value.value}`,
       cache : false,
       success : (data) => {
-        this.setState({ open: false, data: data });
+        this.setState({ open: false, data: JSON.parse(data) });
       },
       error: (xhr, status, err) => {
         this.setState({ open: false, data: xhr.responseText});

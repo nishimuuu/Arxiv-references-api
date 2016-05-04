@@ -54104,7 +54104,7 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Body).call(this, props));
 
-	    _this.state = { data: '', open: false };
+	    _this.state = { data: {}, open: false };
 	    _this.customContentStyle = {
 	      width: '100%',
 	      maxWidth: 'none'
@@ -54126,7 +54126,7 @@
 	        data: 'type=' + value.type + '&value=' + value.value,
 	        cache: false,
 	        success: function success(data) {
-	          _this2.setState({ open: false, data: data });
+	          _this2.setState({ open: false, data: JSON.parse(data) });
 	        },
 	        error: function error(xhr, status, err) {
 	          _this2.setState({ open: false, data: xhr.responseText });
@@ -64176,7 +64176,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { style: this.style, id: 'resultArea' },
-	          this.props.data
+	          _react2.default.createElement(
+	            'pre',
+	            { style: { overflow: 'auto', width: '100%' } },
+	            JSON.stringify(this.props.data, null, 2)
+	          )
 	        )
 	      );
 	    }

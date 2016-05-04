@@ -17,11 +17,11 @@ export default class ResultVal extends Component {
     return (
       <div>
         <h1 style={{ color: Colors.grey500 }}> Response Field </h1>
-
         <div style={this.style} id="resultArea">
-          {this.props.data}
+          <pre style={{overflow: 'auto', width: '100%'}}>
+          {JSON.stringify(this.props.data,null, 2)}
+            </pre>
         </div>
-
       </div>
     );
   }
