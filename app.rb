@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'arxiv/references/myUtil'
+require 'arxiv/references/ArxivUtil'
 require 'sinatra/cross_origin'
 
 not_found do
@@ -13,11 +13,11 @@ get '/arxiv-references/api/v0.1.4/fetch' do
   begin
     case key
       when 'id'
-        return ArxivUtil.fetchFromArxivId value, '/tmp', true
+        return ArxivUtil.fetchFromArxivId(value, '/tmp', true, true).to_json
       when 'pdfurl'
-        return ArxivUtil.fetchFromPdfUrl value, '/tmp', true
+        return ArxivUtil.fetchFromPdfUrl(value, '/tmp', true, true).to_json
       when 'url'
-        return ArxivUtil.fetchFromUrl value, '/tmp', true
+        return ArxivUtil.fetchFromUrl(value, '/tmp', true, true).to_json
       else
         halt 400, 'Type is not found (accept only id/pdfurl/url)'
     end
