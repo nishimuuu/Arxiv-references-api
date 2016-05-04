@@ -17,7 +17,7 @@ get '/arxiv-references/api/v0.1.4/fetch' do
       when 'pdfurl'
         return ArxivUtil.fetchFromPdfUrl(value, '/tmp', true, true).to_json
       when 'url'
-        return ArxivUtil.fetchFromUrl(value, '/tmp', true, true).to_json
+        return ArxivUtil.fetchFromUrl(value, '/tmp', true).to_json
       else
         halt 400, 'Type is not found (accept only id/pdfurl/url)'
     end
